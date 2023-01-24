@@ -136,7 +136,7 @@ class AutoClicker:
 
 def main():
     ac = AutoClicker()
-    print(ac.__doc__)
+    ac.helper()
 
     if len(sys.argv) >= 2 and sys.argv[2] == 'debug':
         ac.is_debug = True
