@@ -24,10 +24,10 @@ class AutoClicker:
 
         self.humain_sleep = 0.041
 
-    def helper(self):
+    def helper(self) -> None:
         print(self.helper.__doc__)
 
-    def status(self):
+    def status(self) -> None:
         """
         Function used to display the status of the current program.
         """
@@ -48,7 +48,7 @@ class AutoClicker:
         print(self.__doc__)
         sleep(0.5)
 
-    def update_keys(self):
+    def update_keys(self) -> None:
         """
         Function called to update the status of the keys.
         """
@@ -62,13 +62,13 @@ class AutoClicker:
             "press_left_shift": win32api.GetAsyncKeyState(self.hex_left_shift),
         }
 
-    def update_mouse_position(self):
+    def update_mouse_position(self) -> None:
         """
         Function called to update the coordinates of the mouse.
         """
         self.mouse_x, self.mouse_y = win32api.GetCursorPos()
 
-    def click(self):
+    def click(self) -> None:
         win32api.SetCursorPos((
             self.mouse_x,
             self.mouse_y
@@ -92,11 +92,11 @@ class AutoClicker:
         return not value
 
     @staticmethod
-    def give_up():
+    def give_up() -> None:
         os.system('cls')
         sys.exit(0)
 
-    def running(self):
+    def running(self) -> None:
         while True:
             self.update_keys()
             self.update_mouse_position()
@@ -134,7 +134,7 @@ class AutoClicker:
                 self.give_up()
 
 
-def main():
+def main() -> None:
     ac = AutoClicker()
     ac.helper()
 
